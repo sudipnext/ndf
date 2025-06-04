@@ -37,7 +37,7 @@ export default function Blog() {
   const posts = [
     {
       title: "How to Choose the Right Tech Stack for Your Startup",
-      category: "Technology",
+      category: "Technology" as keyof typeof categoryIcons,
       date: "June 2, 2024",
       excerpt: "Selecting the right technologies for your startup can be a make-or-break decision. Here's our framework for making this critical choice.",
       image: "/blog/tech-stack.jpg",
@@ -46,7 +46,7 @@ export default function Blog() {
     },
     {
       title: "The Future of Web Development: What's Coming in 2025",
-      category: "Web Development",
+      category: "Web Development" as keyof typeof categoryIcons,
       date: "May 28, 2024",
       excerpt: "From AI-powered development tools to new frameworks and standards, here's what to expect in web development next year.",
       image: "/blog/future-web-dev.jpg",
@@ -55,7 +55,7 @@ export default function Blog() {
     },
     {
       title: "Building Scalable Microservices: Lessons Learned",
-      category: "Architecture",
+      category: "Architecture" as keyof typeof categoryIcons,
       date: "May 15, 2024",
       excerpt: "Our team shares key insights and best practices from building microservice architectures for enterprise clients.",
       image: "/blog/microservices.jpg",
@@ -64,7 +64,7 @@ export default function Blog() {
     },
     {
       title: "UI/UX Design Trends That Improve User Engagement",
-      category: "Design",
+      category: "Design" as keyof typeof categoryIcons,
       date: "May 5, 2024",
       excerpt: "Discover the latest design patterns and techniques that are proven to boost user engagement and conversion rates.",
       image: "/blog/ux-design.jpg",
@@ -73,7 +73,7 @@ export default function Blog() {
     },
     {
       title: "DevOps Best Practices for Continuous Delivery",
-      category: "DevOps",
+      category: "DevOps" as keyof typeof categoryIcons,
       date: "April 22, 2024",
       excerpt: "Learn how to implement efficient CI/CD pipelines and DevOps practices to accelerate your development workflow.",
       image: "/blog/devops.jpg",
@@ -82,7 +82,7 @@ export default function Blog() {
     },
     {
       title: "How We Reduced Cloud Costs by 40% for Our Clients",
-      category: "Cloud",
+      category: "Cloud" as keyof typeof categoryIcons,
       date: "April 10, 2024",
       excerpt: "A detailed case study on optimizing cloud resources and implementing cost-saving strategies for enterprise applications.",
       image: "/blog/cloud-costs.jpg",
@@ -116,8 +116,7 @@ export default function Blog() {
                 key={category}
                 className="px-6 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors duration-200 flex items-center gap-2"
               >
-                {categoryIcons[category]}
-                {category}
+               {categoryIcons[category as keyof typeof categoryIcons]}
               </button>
             ))}
           </div>
