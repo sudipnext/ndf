@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 250 250 251;
+    --foreground: 10 30 45;
+    --card: 250 250 251;
+    --card-foreground: 10 30 45;
+    --popover: 250 250 251;
+    --popover-foreground: 10 30 45;
+    --primary: 37 99 235; /* Changed from green to blue */
+    --primary-foreground: 250 250 251;
+    --secondary: 203 217 220;
+    --secondary-foreground: 10 30 45;
+    --muted: 203 217 220;
+    --muted-foreground: 152 168 173;
+    --accent: 203 217 220;
+    --accent-foreground: 10 30 45;
+    --destructive: 239 68 68;
+    --destructive-foreground: 250 250 251;
+    --border: 203 217 220;
+    --input: 203 217 220;
+    --ring: 37 99 235; /* Changed from green to blue */
+    --chart-1: 37 99 235; /* Changed from green to blue */
+    --chart-2: 152 168 173;
+    --chart-3: 10 30 45;
+    --chart-4: 203 217 220;
+    --chart-5: 250 250 251;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 10 30 45;
+    --foreground: 250 250 251;
+    --card: 10 30 45;
+    --card-foreground: 250 250 251;
+    --popover: 10 30 45;
+    --popover-foreground: 250 250 251;
+    --primary: 59 130 246; /* Changed from green to blue */
+    --primary-foreground: 10 30 45;
+    --secondary: 152 168 173;
+    --secondary-foreground: 250 250 251;
+    --muted: 152 168 173;
+    --muted-foreground: 203 217 220;
+    --accent: 152 168 173;
+    --accent-foreground: 250 250 251;
+    --destructive: 239 68 68;
+    --destructive-foreground: 250 250 251;
+    --border: 152 168 173;
+    --input: 152 168 173;
+    --ring: 59 130 246; /* Fixed missing value and changed from green to blue */
+    --chart-1: 96 165 250; /* Changed from green to blue */
+    --chart-2: 152 168 173;
+    --chart-3: 250 250 251;
+    --chart-4: 203 217 220;
+    --chart-5: 10 30 45;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Noto Sans', 'Montserrat', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+
+
+/* Custom styles for NDF */
+.NDF-navy {
+  background-color: #0a1e2d;
+}
+
+.NDF-blue {
+  background-color: #3b82f6; /* Changed from green to blue */
+}
+.NDF-text-blue {
+  color: #3b82f6; /* Changed from green to blue */
+}
+
+.NDF-light {
+  background-color: #fafbfb;
+}
+
+.NDF-gray {
+  color: #98a8ad;
+}
+
+/* Dotted pattern decorations */
+.dotted-pattern {
+  background-image: radial-gradient(circle, #3b82f6 1px, transparent 1px); /* Changed from green to blue */
+  background-size: 10px 10px;
+}
+
+.dotted-pattern-light {
+  background-image: radial-gradient(circle, #cbd9dc 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
