@@ -77,7 +77,9 @@ const WorkWeLoveSection = () => {
                       >
                         <span className="w-4 h-4 flex items-center justify-center">
                           {React.cloneElement(
-                            technologyIcons[tech] || <span className="text-primary font-bold">{tech.charAt(0)}</span>,
+                            React.isValidElement((technologyIcons as Record<string, React.ReactNode>)[tech])
+                              ? React.cloneElement((technologyIcons as Record<string, React.ReactNode>)[tech] as React.ReactElement, { className: "w-3 h-3" })
+                              : <span className="text-primary font-bold">{tech.charAt(0)}</span>,
                             { className: "w-3 h-3" }
                           )}
                         </span>
