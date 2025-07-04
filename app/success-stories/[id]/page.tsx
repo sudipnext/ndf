@@ -127,7 +127,9 @@ export default function CaseStudyPage() {
             {story.technologies.map((tech, index) => (
               <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="w-16 h-16 bg-gray-50 rounded-xl flex items-center justify-center mx-auto mb-4 hover:bg-gray-100 transition-colors duration-300">
-                  {technologyIcons[tech] || <span className="text-primary font-bold text-lg">{tech.charAt(0)}</span>}
+                  {(technologyIcons as Record<string, React.ReactNode>)[tech] || (
+                    <span className="text-primary font-bold text-lg">{tech.charAt(0)}</span>
+                  )}
                 </div>
                 <h3 className="font-semibold text-[#0a1e2d] text-sm">{tech}</h3>
               </div>
