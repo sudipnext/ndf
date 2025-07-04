@@ -47,8 +47,8 @@ const HeroSection = () => {
               </p>
               <div className="flex items-center space-x-8 opacity-60">
                 <Image
-                  src="https://ext.same-assets.com/1028798745/845340573.svg"
-                  alt="Coca Cola"
+                  src="https://mechicampus.edu.np/front/dark-logo.png"
+                  alt="Mechi Campus"
                   width={80}
                   height={40}
                   className="h-8 w-auto grayscale"

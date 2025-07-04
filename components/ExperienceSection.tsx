@@ -29,13 +29,12 @@ const ExperienceSection = () => {
               </h2>
 
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                Start from scratch or augment your team. We have programming expertise
-                combined with must-have soft skills.
+                Benefit from our extensive experience in the industry. We understand the challenges you face and are here to help you overcome them. We provide Training and Development services to help you build the skills you need to succeed in today's fast-paced digital landscape. Our team of experts is dedicated to delivering high-quality training programs that are tailored to your specific needs.
               </p>
 
               <div className="mb-6">
                 <p className="text-gray-700 font-medium">
-                  <span className="font-bold">Er. Yuyutshu Banjara</span> - CEO at NDF
+                  <span className="font-bold">Er. Yuyutshu Banjara</span> - Cheif Executive Farmer at NDF
                 </p>
               </div>
 

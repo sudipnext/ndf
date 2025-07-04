@@ -1,15 +1,17 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { successStories, technologyIcons } from '@/data/successStoriesData';
 
 const WorkWeLoveSection = () => {
+  // Get all available success stories for display
+  const featuredStories = successStories;
+
   return (
     <section className="bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-        
-
           <h2 className="text-4xl lg:text-5xl font-bold text-[#0a1e2d] mb-4">
             Work we <span className="text-primary">love</span>
           </h2>
@@ -19,70 +21,104 @@ const WorkWeLoveSection = () => {
         </div>
 
         {/* Case Studies Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {/* Alpha Case Study */}
-          <Link href="/clients/alpha" className="group">
-            <div className="bg-black rounded-2xl p-8 h-80 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-              {/* Geometric pattern background */}
-              <div className="absolute inset-0 opacity-10">
-          <div className="grid grid-cols-8 gap-2 h-full">
-            {Array.from({ length: 64 }).map((_, i) => (
-              <div key={i} className="border border-white/20"></div>
-            ))}
-          </div>
-              </div>
-              <div className="text-white text-4xl font-bold relative z-10">
-          Alpha
-              </div>
-            </div>
-          </Link>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+          {featuredStories.map((story, index) => (
+            <Link 
+              key={story.id} 
+              href={`/success-stories/${story.id}`} 
+              className="group"
+            >
+              <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                {/* Story Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={story.image}
+                    alt={story.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {story.category}
+                    </span>
+                  </div>
+                  
+                  {/* Year Badge */}
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {story.year}
+                    </span>
+                  </div>
+                </div>
 
-          {/* Beta Case Study */}
-          <Link href="/clients/beta" className="group">
-            <div className="bg-white border-2 border-blue-200 rounded-2xl p-8 h-80 flex flex-col items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-              {/* Decorative dots */}
-              <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-4 left-4 w-20 h-20 dotted-pattern opacity-20"></div>
-          <div className="absolute bottom-4 right-4 w-20 h-20 dotted-pattern opacity-20"></div>
+                {/* Story Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-[#0a1e2d] mb-2 group-hover:text-primary transition-colors duration-300">
+                    {story.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">
+                    {story.description}
+                  </p>
+                  
+                  {/* Client */}
+                  <p className="text-sm text-gray-500 mb-4">
+                    Client: {story.client}
+                  </p>
+                  
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {story.technologies.slice(0, 3).map((tech, techIndex) => (
+                      <div 
+                        key={techIndex}
+                        className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-md text-xs"
+                      >
+                        <span className="w-4 h-4 flex items-center justify-center">
+                          {React.cloneElement(
+                            technologyIcons[tech] || <span className="text-primary font-bold">{tech.charAt(0)}</span>,
+                            { className: "w-3 h-3" }
+                          )}
+                        </span>
+                        <span className="text-gray-700 font-medium">{tech}</span>
+                      </div>
+                    ))}
+                    {story.technologies.length > 3 && (
+                      <span className="text-xs text-gray-500 px-2 py-1">
+                        +{story.technologies.length - 3} more
+                      </span>
+                    )}
+                  </div>
+                  
+                  {/* Read More Link */}
+                  <div className="flex items-center text-primary font-medium text-sm group-hover:text-primary/80 transition-colors duration-300">
+                    <span>View Case Study</span>
+                    <svg 
+                      className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
-              <Image
-          src="https://via.placeholder.com/120x60"
-          alt="Beta"
-          width={120}
-          height={60}
-          className="h-12 w-auto relative z-10"
-              />
-            </div>
-          </Link>
-
-          {/* Gamma Case Study */}
-          <Link href="/clients/gamma" className="group">
-            <div className="bg-[#0a1e2d] rounded-2xl p-8 h-80 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
-              {/* Tech pattern background */}
-              <div className="absolute inset-0 opacity-20">
-          <div className="grid grid-cols-6 gap-4 h-full">
-            {Array.from({ length: 36 }).map((_, i) => (
-              <div key={i} className="flex items-center justify-center">
-                <div className="w-2 h-2 NDF-blue rounded-full"></div>
-              </div>
-            ))}
-          </div>
-              </div>
-              <div className="text-white text-2xl font-bold relative z-10 text-center">
-          <div className="mb-2">Gamma</div>
-          <div className="text-sm font-normal opacity-80">INNOVATION SIMPLIFIED</div>
-              </div>
-            </div>
-          </Link>
+            </Link>
+          ))}
         </div>
 
         {/* CTA Button */}
         <div className="text-center">
           <Link
             href="/success-stories"
-            className="NDF-blue text-white px-8 py-4 rounded-full font-medium hover:NDF-blue/90 transition-colors duration-200"
+            className="bg-primary text-white px-8 py-4 rounded-full font-medium hover:bg-primary/90 hover:text-primary hover:border-primary-500 transition-colors duration-200 inline-flex items-center gap-2"
           >
-            see all success stories
+            <span>See all success stories</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
           </Link>
         </div>
       </div>
