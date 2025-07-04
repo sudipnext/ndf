@@ -176,43 +176,43 @@ export const teamMembers = [
   }
 ];
 
-export const companyMilestones = [
-  {
-    year: "2018",
-    title: "Company Founded",
-    description: "NDF was established with a vision to bridge the gap between technology and business needs."
-  },
-  {
-    year: "2019",
-    title: "First Major Client",
-    description: "Successfully delivered our first enterprise solution, establishing our reputation for quality."
-  },
-  {
-    year: "2020",
-    title: "Team Expansion",
-    description: "Grew our team to 10+ professionals and expanded our service offerings."
-  },
-  {
-    year: "2021",
-    title: "International Reach",
-    description: "Started serving clients globally, working with companies across different continents."
-  },
-  {
-    year: "2022",
-    title: "Technology Leadership",
-    description: "Became recognized experts in modern web technologies and cloud solutions."
-  },
-  {
-    year: "2023",
-    title: "Innovation Focus",
-    description: "Launched our innovation lab, focusing on AI/ML and emerging technologies."
-  },
-  {
-    year: "2024",
-    title: "Sustainable Growth",
-    description: "Achieved sustainable growth while maintaining our commitment to quality and client satisfaction."
-  }
-];
+// export const companyMilestones = [
+//   {
+//     year: "2018",
+//     title: "Company Founded",
+//     description: "NDF was established with a vision to bridge the gap between technology and business needs."
+//   },
+//   {
+//     year: "2019",
+//     title: "First Major Client",
+//     description: "Successfully delivered our first enterprise solution, establishing our reputation for quality."
+//   },
+//   {
+//     year: "2020",
+//     title: "Team Expansion",
+//     description: "Grew our team to 10+ professionals and expanded our service offerings."
+//   },
+//   {
+//     year: "2021",
+//     title: "International Reach",
+//     description: "Started serving clients globally, working with companies across different continents."
+//   },
+//   {
+//     year: "2022",
+//     title: "Technology Leadership",
+//     description: "Became recognized experts in modern web technologies and cloud solutions."
+//   },
+//   {
+//     year: "2023",
+//     title: "Innovation Focus",
+//     description: "Launched our innovation lab, focusing on AI/ML and emerging technologies."
+//   },
+//   {
+//     year: "2024",
+//     title: "Sustainable Growth",
+//     description: "Achieved sustainable growth while maintaining our commitment to quality and client satisfaction."
+//   }
+// ];
 
 export const coreServices = [
   {

@@ -18,7 +18,7 @@ import {
   companyValues, 
   companyStats, 
   teamMembers, 
-  companyMilestones, 
+  // companyMilestones, 
   coreServices,
   aboutHero 
 } from '@/data/aboutData';
@@ -143,7 +143,7 @@ export default function About() {
       </section>
 
       {/* Our Story Section */}
-      <section className="bg-gray-50 py-20">
+      {/* <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <div>
@@ -171,7 +171,7 @@ export default function About() {
             </div>
             
             {/* Timeline */}
-            <div className="space-y-6">
+            {/* <div className="space-y-6">
               {companyMilestones.slice(0, 5).map((milestone, index) => (
                 <div key={index} className="flex items-start">
                   <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
@@ -187,10 +187,10 @@ export default function About() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> 
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Team Section */}
       <section className="bg-white py-20">
